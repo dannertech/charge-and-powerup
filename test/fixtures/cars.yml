@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  charge: 1
+  model: MyString
+  make: MyString
+  user: one
+  nickname: MyString
+
+two:
+  charge: 1
+  model: MyString
+  make: MyString
+  user: two
+  nickname: MyString
