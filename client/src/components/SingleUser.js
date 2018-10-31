@@ -16,6 +16,7 @@ const cars = await this.fetchCars(userId)
     }
 
     fetchUser = async(id) => {
+
 const response = await axios.get(`/api/users/${id}`)
 return response.data
 
@@ -32,7 +33,9 @@ return response.data
         const allCars = this.state.cars.map((car, i) => {
             return (
                 <div key={i}>
-                <h1>{car.nickname}</h1>
+                <h1>
+                <Link to={`/users/${user.id}/cars/${car.id}`} >{car.nickname}</Link>
+                </h1>
                 <h1>{car.charge}</h1>
                 </div>
             )
@@ -40,6 +43,7 @@ return response.data
         return (
             <div>
             <h1>Hi {user.username}</h1>
+            <h1>Here are your cars</h1>
           {allCars}
             </div>
         )
