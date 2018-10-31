@@ -10,8 +10,11 @@ export default class SingleUser extends Component {
 
     async componentDidMount(){
         const userId = this.props.match.params.id
+
         const user = await this.fetchUser(userId)
         const cars = await this.fetchCars(userId)
+
+
         this.setState({ user,cars})
 
     }
@@ -26,8 +29,11 @@ this.setState({user: response.data})
         this.setState({cars: response.data})
     }
     render() {
+        const user = this.state.user
         return (
-            <h1>Hello as well</h1>
+            <div>
+            <h1>Hi {user.username}</h1>
+            </div>
         )
     }
 }
