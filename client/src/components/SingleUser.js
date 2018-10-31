@@ -12,22 +12,19 @@ export default class SingleUser extends Component {
         const userId = this.props.match.params.id
 
         const user = await this.fetchUser(userId)
-        const cars = await this.fetchCars(userId)
+     
 
 
-        this.setState({ user,cars})
+        this.setState({ user })
 
     }
 
     fetchUser = async(id) => {
 const response = await axios.get(`/api/users/${id}`)
-this.setState({user: response.data})
+return response.data
+
     }
 
-    fetchCars = async(id) => {
-        const response = await axios.get(`/api/users/${id}`)
-        this.setState({cars: response.data})
-    }
     render() {
         const user = this.state.user
         return (
