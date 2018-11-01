@@ -22,6 +22,7 @@ return response.data
         const updatedUser = {...this.state.user}
         updatedUser[event.target.name] = event.target.value
         this.setState({user:updatedUser})
+   
     }
 
     handleSubmit = (event,updatedUser) => {
@@ -41,11 +42,11 @@ render(){
 <form onSubmit={this.handleSubmit}>
 <label>Username</label>
 <br></br>
-<input type="text" name="username" value={this.state.user.username} />
+<input type="text" name="username" value={this.state.user.username} onChange={this.handleChange}/>
 <br></br>
 <label>Password</label>
 <br></br>
-<input type="text" name="password" value={this.state.user.password} />
+<input type="text" name="password" value={this.state.user.password} onChange={this.handleChange}/>
 <br></br>
 <button type="submit">Submit</button>
 </form>
