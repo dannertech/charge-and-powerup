@@ -6,6 +6,7 @@ import SingleUser from './components/SingleUser'
 import AllCars from './components/AllCars'
 import SingleCar from './components/SingleCar'
 import AccountSettings from './components/AccountSettings'
+import SignupPage from './components/SignupPage'
 
 
 import './App.css';
