@@ -27,7 +27,11 @@ render(){
         <div>
             <h1>Settings Page</h1>
 <form onSubmit={this.handleSubmit}>
+<label>Username</label>
+<br></br>
 <input type="text" name="username" value={this.state.user.username} />
+<br></br>
+<label>Password</label>
 <br></br>
 <input type="text" name="password" value={this.state.user.password} />
 <br></br>
