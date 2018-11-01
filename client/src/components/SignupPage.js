@@ -11,6 +11,16 @@ export default class SignupPage extends Component {
             username: ''
         }
     }
+
+  async componentDidMount(){
+const response = await axios.get(`/api/users`)
+this.setState({ users: response.data })
+console.log(this.state.users)
+    }
+
+    handleChange = (event) => {
+
+    }
     render(){
         return(
             <div>
@@ -22,7 +32,7 @@ export default class SignupPage extends Component {
                 <br></br>
                 <label>Password</label>
                 <br></br>
-                <input type="text" name="password" value={this.state.newUser.password} onClick={this.handleChange} />
+                <input type="text" name="password" value={this.state.newUser.password} onChange={this.handleChange} />
                 <br></br>
                 <button type="submit">Submit</button>
                 </form>
