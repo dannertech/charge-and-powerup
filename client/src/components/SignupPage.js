@@ -15,12 +15,20 @@ export default class SignupPage extends Component {
   async componentDidMount(){
 const response = await axios.get(`/api/users`)
 this.setState({ users: response.data })
-console.log(this.state.users)
+
     }
 
     handleChange = (event) => {
-
+        const new_user = {...this.state.newUser}
+        new_user[event.target.name] = [event.target.value]
+        this.setState({ newUser: new_user})
     }
+    handleSubmit = async(event) => {
+event.preventDefault()
+await axios.post('/api/users', this.state.newUser)
+console.log(this.state.users)
+    }
+
     render(){
         return(
             <div>
