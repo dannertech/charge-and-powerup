@@ -4,7 +4,10 @@ import styled from 'styled-components'
 
 export default class AccountSettings extends Component {
     state = {
-        user: {}
+        user: {
+            username: '',
+            password: ''
+        }
     }
 
     async componentDidMount(){
@@ -22,13 +25,14 @@ return response.data
         const updatedUser = {...this.state.user}
         updatedUser[event.target.name] = event.target.value
         this.setState({user:updatedUser})
+        console.log(this.state.user)
    
     }
 
-    handleSubmit = (event,updatedUser) => {
+    handleSubmit = (event) => {
         event.preventDefault()
         const currentUser = {...this.state.user}
-        currentUser.username = updatedUser.username
+
        
 
  
