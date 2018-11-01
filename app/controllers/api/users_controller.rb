@@ -24,7 +24,6 @@ render json: @user
 
     def destroy
 @user = User.find([:id]).delete
-
 render status: :ok
     end
     private
