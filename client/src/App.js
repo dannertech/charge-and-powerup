@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage'
 import AllUsers from './components/AllUsers'
 import SingleUser from './components/SingleUser'
 import AllCars from './components/AllCars'
+import SingleCar from './components/SingleCar'
 
 
 import './App.css';
@@ -19,6 +20,7 @@ class App extends Component {
       <Route exact path='/users' component={AllUsers} />
       <Route exact path='/users/:id' component={SingleUser} />
       <Route exact path='/users/:id/cars' component= {AllCars} />
+      <Route exact path='/users/:id/cars/:id' component = {SingleCar} />
 
     </Switch>
   </Router>
