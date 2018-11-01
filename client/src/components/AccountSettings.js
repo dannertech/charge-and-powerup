@@ -38,6 +38,10 @@ return response.data
 this.setState({ successful: true})
     }
 
+    deleteUser = async(id) => {
+        const response = await axios.delete(`/api/users/${id}`)
+        
+    }
 
 render(){
     if (this.state.successful) {
@@ -57,6 +61,8 @@ render(){
 <br></br>
 <button type="submit">Submit</button>
 </form>
+<button onClick={this.deleteUser}>Delete Your Account</button>
+
         </div>
     )
 }
