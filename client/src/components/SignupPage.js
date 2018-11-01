@@ -23,6 +23,8 @@ export default class SignupPage extends Component {
                 <label>Password</label>
                 <br></br>
                 <input type="text" name="password" value={this.state.newUser.password} onClick={this.handleChange} />
+                <br></br>
+                <button type="submit">Submit</button>
                 </form>
             </div>
         )
