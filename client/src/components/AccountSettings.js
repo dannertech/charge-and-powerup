@@ -35,6 +35,7 @@ render(){
 <br></br>
 <input type="text" name="password" value={this.state.user.password} />
 <br></br>
+<button type="submit">Submit</button>
 </form>
         </div>
     )
