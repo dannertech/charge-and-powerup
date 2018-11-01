@@ -42,6 +42,7 @@ return response.data
         })
         return (
             <div>
+                <Link to={`/users/${user.id}/settings`}>Settings</Link>
             <h1>Hi {user.username}</h1>
             <h1>Here are your cars</h1>
           {allCars}
