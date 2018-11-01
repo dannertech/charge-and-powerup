@@ -19,7 +19,7 @@ await this.fetchUsers()
  fetchUsers = async() => {
 const response = await Axios.get('/api/users')
 this.setState({ users: response.data})
-console.log(this.state.users)
+
 }
     render() {
 
@@ -33,8 +33,10 @@ console.log(this.state.users)
         })
     return (
         <div>
+
             <h1>Hello</h1>
            <h1> {allUsers} </h1>
+           <Link to={`/users/new`}>Sign Up</Link>
         </div>
     
     )
