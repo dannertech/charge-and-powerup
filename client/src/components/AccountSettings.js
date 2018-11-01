@@ -7,7 +7,8 @@ export default class AccountSettings extends Component {
         user: {
             username: '',
             password: ''
-        }
+        },
+        successful: false
     }
 
     async componentDidMount(){
@@ -34,11 +35,14 @@ return response.data
         const currentUser = {...this.state.user}
         const userId = this.props.match.params.id
         await axios.put(`/api/users/${userId}`, currentUser)
-        console.log(this.state.user)
+this.setState({ successful: true})
     }
 
 
 render(){
+    if (this.state.successful) {
+        return <h1>Your update was successful!</h1>
+    }
     return(
         <div>
             <h1>Settings Page</h1>
