@@ -25,17 +25,16 @@ return response.data
         const updatedUser = {...this.state.user}
         updatedUser[event.target.name] = event.target.value
         this.setState({user:updatedUser})
-        console.log(this.state.user)
+      
    
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async(event) => {
         event.preventDefault()
         const currentUser = {...this.state.user}
-
-       
-
- 
+        const userId = this.props.match.params.id
+        await axios.put(`/api/users/${userId}`, currentUser)
+        console.log(this.state.user)
     }
 
 
