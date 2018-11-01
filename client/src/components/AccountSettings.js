@@ -6,6 +6,18 @@ export default class AccountSettings extends Component {
     state = {
         user: {}
     }
+
+    async componentDidMount(){
+        const userId = this.props.match.params.id
+const user = await this.fetchUser(userId)
+this.setState({ user })
+
+    }
+
+    fetchUser = async(id) => {
+const response = await axios.get(`/api/users/${id}`)
+return response.data
+    }
     handleChange = (event) => {
         const updatedUser = {...this.state.user}
         updatedUser[event.target.name] = event.target.value
