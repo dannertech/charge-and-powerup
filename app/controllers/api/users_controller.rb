@@ -22,7 +22,7 @@ render json: @user
     end
 
     def destroy
-@user = User.find([:id]).delete
+@user = User.find(params[:id]).delete
 render status: :ok
     end
     private

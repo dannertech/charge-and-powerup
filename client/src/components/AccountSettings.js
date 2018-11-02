@@ -38,8 +38,9 @@ return response.data
 this.setState({ successful: true})
     }
 
-    deleteUser = async(id) => {
-        const response = await axios.delete(`/api/users/${id}`)
+    deleteUser = async(event) => {
+const userId = this.props.match.params.id
+await axios.delete(`/api/users/${userId}`)
         
     }
 
@@ -61,7 +62,7 @@ render(){
 <br></br>
 <button type="submit">Submit</button>
 </form>
-<button onClick={this.deleteUser}>Delete Your Account</button>
+<button onClick={(event)=> this.deleteUser(event)}>Delete Your Account</button>
 
         </div>
     )
