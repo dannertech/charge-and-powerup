@@ -1,29 +1,30 @@
 class Api::CarsController < ApplicationController
     def index
-        @cars = Car.all
+        @cars = Car.find(params[:user_id]).cars
         render json: @cars
     end
 
 
     def show
-        @cars = User.find(params[:id]).cars
-        render json: @cars
+        @user = User.find(params[:user_id])
+        @cars = @user.cars.find(params[:id])
+        render json: @car
     end
 
     def create
-        @car = User.find(params[:id]).cars.create(cars_params)
+        @car = User.find(params[:user_id]).cars.create(cars_params)
         render json: @car
     end
 
     def update
-        @car = Car.find(params[:id])
-        @car.update(car_params)
-        render json: car
+       @user = User.find(params[:user_id])
+       @car = @user.cars.find(params[:id]).update(cars_params)
+       render json: @car
     end
 
     def destroy 
-        @car = Car.find(params[:id])
-        @car.destroy
+        @user = User.find(params[:user_id])
+        @car = @user.find(params[:id]).destroy
         render json: 200
     end
 
