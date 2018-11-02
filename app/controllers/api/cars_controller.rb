@@ -12,13 +12,13 @@ class Api::CarsController < ApplicationController
     end
 
     def create
-        @car = User.find(params[:user_id]).cars.create(cars_params)
+        @car = User.find(params[:user_id]).cars.create(car_params)
         render json: @car
     end
 
     def update
        @user = User.find(params[:user_id])
-       @car = @user.cars.find(params[:id]).update(cars_params)
+       @car = @user.cars.find(params[:id]).update(car_params)
        render json: @car
     end
 
@@ -31,7 +31,7 @@ class Api::CarsController < ApplicationController
     private
 
     def car_params
-        params.require(:car).permit(:title,:album,:preview_url)
+        params.require(:car).permit(:nickname,:charge,:make,:model)
     end
   
 end

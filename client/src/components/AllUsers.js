@@ -27,7 +27,7 @@ console.log(this.state.users)
             return (
                 <UserDiv key={i}>
                     <h1>{user.username}</h1>
-                    <Link to={`/users/${user.id}`} >{user.id}</Link>
+                    <Link to={`/users/${user.id}/cars`} >{user.id}</Link>
                 </UserDiv>
             )
         })
