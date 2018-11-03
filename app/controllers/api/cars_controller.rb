@@ -1,6 +1,6 @@
 class Api::CarsController < ApplicationController
     def index
-        @cars = Car.find(params[:user_id]).cars
+        @cars = User.find(params[:user_id]).cars
         render json: @cars
     end
 
