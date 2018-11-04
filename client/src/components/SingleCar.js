@@ -7,13 +7,16 @@ export default class SingleCar extends Component {
     state = {
         car : {}
     }
-  async  componentDidMount(){
-      const carId = this.props.match.params.id
-//const post = await this.fetchPost(userId)
+   componentDidMount(){
+    this.fetchCar()
+    }
+
+    fetchCar = async() => {
+const carId = this.props.match.params.id
 const userId = this.props.match.params.userId
-console.log(userId)
-        const response = await axios.get(`/api/users/${userId}/cars/${carId}`)
-        this.setState({ car: response.data})
+const response = await axios.get(`/api/users/${userId}/cars/${carId}`)
+
+this.setState ({ car: response.data })
     }
     deleteCar = async(event) => {
         //change this to match users id

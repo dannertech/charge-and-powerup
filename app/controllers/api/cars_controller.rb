@@ -8,7 +8,7 @@ class Api::CarsController < ApplicationController
     def show
         @user = User.find(params[:user_id])
         @cars = @user.cars.find(params[:id])
-        render json: @car
+        render json: @cars
     end
 
     def create

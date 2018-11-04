@@ -23,7 +23,7 @@ class App extends Component {
       <Route exact path='/users/new' component={SignupPage} />
       <Route exact path='/users/:id' component={SingleUser} />
       <Route exact path='/users/:id/cars' component= {AllCars} />
-      <Route exact path='/users/:id/cars/:id' component = {SingleCar} />
+      <Route exact path='/users/:userId/cars/:id' component = {SingleCar} />
       <Route exact path='/users/:id/settings' component = {AccountSettings} />
       
 
