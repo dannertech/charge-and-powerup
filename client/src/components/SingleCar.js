@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 
 export default class SingleCar extends Component {
     state = {
+        user: {},
         car : {}
     }
    componentDidMount(){
     this.fetchCar()
-    console.log(this.state)
+    this.fetchUser()
+    console.log(this.state.user)
     }
 
     fetchCar = async() => {
@@ -18,6 +21,11 @@ const userId = this.props.match.params.userId
 const response = await axios.get(`/api/users/${userId}/cars/${carId}`)
 
 this.setState ({ car: response.data })
+    }
+    fetchUser = async() => {
+        const userId = this.props.match.params.userId
+        const response = await axios.get(`/api/users/${userId}`)
+        this.setState({ user: response.data })
     }
     deleteCar = async(event) => {
         //change this to match users id
@@ -31,6 +39,7 @@ this.setState ({ car: response.data })
     <button onClick={(event) => this.deleteCar(event)}>Delete Car</button>
             <h1>You are at your single car page</h1>
             <h1>{this.state.car.nickname}</h1>
+            <Link to={`/users/${this.state.user.id}/cars`}>Back to All Cars</Link>
             </div>
         )
     }
