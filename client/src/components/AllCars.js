@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 export default class AllCars extends Component {
@@ -34,6 +35,7 @@ render(){
             <h1>{car.charge}</h1>
             <h3>{car.model}</h3>
             <h3>{car.make}</h3>
+            <Link to={`/users/${this.state.user.id}/cars/${car.id}`}>{car.nickname}</Link>
         </div>
         )
     })
