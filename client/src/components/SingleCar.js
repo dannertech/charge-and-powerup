@@ -28,8 +28,9 @@ this.setState ({ car: response.data })
     render(){
         return(
 <div>
-    <button onClick={this.deleteCar}>Delete Car</button>
+    <button onClick={(event) => this.deleteCar(event)}>Delete Car</button>
             <h1>You are at your single car page</h1>
+            <h1>{this.state.car.nickname}</h1>
             </div>
         )
     }

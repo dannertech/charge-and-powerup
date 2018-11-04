@@ -23,7 +23,7 @@ class Api::CarsController < ApplicationController
     end
 
     def destroy 
-        @user = User.find(params[:user_id])
+        @user = User.find(params[:user_id]).cars
         @car = @user.find(params[:id]).destroy
         render json: 200
     end
