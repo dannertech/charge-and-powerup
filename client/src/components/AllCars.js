@@ -43,6 +43,8 @@ render(){
 <div>
     <h1>Hello this is the all cars page</h1>
     <div>{allCars}</div>
+
+<Link to={`/users/${this.state.user.id}`}>Back to Homepage</Link>
 </div>
     )
 }
