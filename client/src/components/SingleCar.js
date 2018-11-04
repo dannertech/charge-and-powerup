@@ -9,6 +9,7 @@ export default class SingleCar extends Component {
     }
    componentDidMount(){
     this.fetchCar()
+    console.log(this.state.car)
     }
 
     fetchCar = async() => {
