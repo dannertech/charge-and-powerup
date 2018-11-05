@@ -41,7 +41,11 @@ const Background = styled.div`
 export default class LandingPage extends Component {
     state = {
         users : [],
-        onLogin: true
+        onLogin: true,
+        newUser: {
+            username: '',
+            email: ''
+        }
     }
 
     changeForm = () => {
@@ -52,6 +56,20 @@ export default class LandingPage extends Component {
 
    async componentDidMount(){
 await this.fetchUsers()
+const response = await Axios.get(`/api/users`)
+this.setState({ users: response.data})
+    }
+
+    handleChange = (event) => {
+        const new_user = {...this.state.newUser}
+        new_user[event.target.name] = event.target.value
+        this.setState({ newUser: new_user })
+    }
+
+    handleSubmit = async(event) => {
+        event.preventDefault()
+        await Axios.post(`api/users`, this.state.newUser)
+        console.log("successful")
     }
 
  fetchUsers = async() => {
@@ -92,31 +110,21 @@ this.setState({ users: response.data})
 {this.state.onLogin ?  <Form>
 
     <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Placeholder" id="first_name" type="text" class="validate"></input>
-            <label for="first_name">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate"></input>
-            <label for="last_name">Last Name</label>
-          </div>
-        </div>
-       
+      <form class="col s12" onSubmit={this.handleSubmit}>
         <div class="row">
           <div class="input-field col s12">
-            <input id="password" type="password" class="validate"></input>
-            <label for="password">Password</label>
+            <input name="username" id="username" value={this.state.newUser.username} type="text" class="validate" onChange={this.handleChange}></input>
+            <label for="username">Username</label>
           </div>
-        </div>
+          </div>
+ 
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate"></input>
+            <input name="email" id="email" value={this.state.newUser.email} type="email" class="validate" onChange={this.handleChange}></input>
             <label for="email">Email</label>
           </div>
         </div>
-       
+       <button>Submit</button>
       </form>
     </div>
           
@@ -128,13 +136,10 @@ this.setState({ users: response.data})
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Placeholder" id="username" type="text" class="validate"></input>
+              <input id="username" type="text" class="validate"></input>
               <label for="username">Username</label>
             </div>
-            <div class="input-field col s6">
-              <input id="password" type="text" class="validate"></input>
-              <label for="password">Password</label>
-            </div>
+    
           </div>
          
        
