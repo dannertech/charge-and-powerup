@@ -76,6 +76,8 @@ this.setState({ users: response.data})
         event.preventDefault()
         await Axios.post(`api/users`, this.state.newUser)
         console.log("successful")
+        
+
         this.setState({ redirect: true })
     }
 
@@ -87,7 +89,9 @@ this.setState({ users: response.data})
     render() {
 if(this.state.redirect){
     return (
+
         <Redirect to={`/`}></Redirect>
+        
     )
 }
         const allUsers = this.state.users.map((user, i) => {
