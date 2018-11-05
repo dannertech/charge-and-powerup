@@ -5,6 +5,15 @@ import styled from 'styled-components'
 import HeaderTextImage from '../images/Header.png'
 import HeaderCarImage from '../images/circle-car-image.png'
 
+const FormControl = styled.div`
+
+`
+
+const Form = styled.div`
+background-color: black;
+width: 80vw;
+border-radius: 25px;
+`
 
 const PowerupHeader = styled.div`
 
@@ -59,6 +68,42 @@ this.setState({ users: response.data})
            <h1> {allUsers} </h1>
            <Link to={`/users/new`}>Sign Up</Link>
     */}
+    <FormControl>
+
+    </FormControl>
+
+    <Form>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate"></input>
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate"></input>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate"></input>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate"></input>
+          <label for="email">Email</label>
+        </div>
+      </div>
+     
+    </form>
+  </div>
+        
+    </Form>
          
         </Background>
        
