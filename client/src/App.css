@@ -1,10 +1,9 @@
-#landingBody {
-  color: black;
-  display: flex;
-
+body {
+  background-color: white;
+  font-family: 'Dosis', sans-serif;
 }
 
-body {
-  background-image: url('./images/powerup-background (1).png');
-background-size: cover;
+#headerImage {
+  width: 80%;
+  height: 30%;
 }
