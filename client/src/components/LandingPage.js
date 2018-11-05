@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import styled from 'styled-components'
 
+const Background = styled.div`
+
+`
+
 
 const UserDiv = styled.div`
 
@@ -33,12 +37,16 @@ this.setState({ users: response.data})
             )
         })
     return (
-        <div>
-
+        
+        <Background id="landingBody">
+       <body>
+           {/*}
             <h1>Hello</h1>
            <h1> {allUsers} </h1>
            <Link to={`/users/new`}>Sign Up</Link>
-        </div>
+    */}
+           </body>
+        </Background>
     
     )
     }

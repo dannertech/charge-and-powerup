@@ -1,0 +1,10 @@
+#landingBody {
+  color: black;
+  display: flex;
+
+}
+
+body {
+  background-image: url('./images/powerup-background (1).png');
+background-size: cover;
+}
