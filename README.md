@@ -6,8 +6,11 @@ application up and running.
 Things you may want to cover:
 
 ### Credits
-Animesh Singh vis Stack Overflow
+Animesh Singh via Stack Overflow (how to kill something already running on a port)
 https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt
+
+WesBos.com (how to add react comments)
+https://wesbos.com/react-jsx-comments/
 
 * Ruby version
 
