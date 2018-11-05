@@ -10,9 +10,14 @@ const FormControl = styled.div`
 `
 
 const Form = styled.div`
-background-color: black;
+
 width: 80vw;
-border-radius: 25px;
+
+color: black;
+display: flex;
+justify-content: center;
+align-content: center;
+margin: 7% 0% 0% 7%;
 `
 
 const PowerupHeader = styled.div`
@@ -55,6 +60,7 @@ this.setState({ users: response.data})
             )
         })
     return (
+        <body>
        
         <Background id="landingBody">
     <PowerupHeader>
@@ -106,6 +112,7 @@ this.setState({ users: response.data})
     </Form>
          
         </Background>
+        </body>
        
       
     
