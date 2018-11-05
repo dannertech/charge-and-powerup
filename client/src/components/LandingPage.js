@@ -6,6 +6,10 @@ import HeaderTextImage from '../images/Header.png'
 import HeaderCarImage from '../images/circle-car-image.png'
 
 const FormControl = styled.div`
+display: flex;
+align-content: center;
+justify-content: space-around;
+margin: 0% 5% 0% 0%;
 
 `
 
@@ -29,15 +33,21 @@ flex-wrap: wrap;
 `
 
 const Background = styled.div`
-background-color: white;
-overflow: hidden;
+
 `
 
 
 
 export default class LandingPage extends Component {
     state = {
-        users : []
+        users : [],
+        onLogin: true
+    }
+
+    changeForm = () => {
+        const reverseIt = !this.state.onLogin
+        this.setState({onLogin: reverseIt})
+
     }
 
    async componentDidMount(){
@@ -60,7 +70,7 @@ this.setState({ users: response.data})
             )
         })
     return (
-        <body>
+        
        
         <Background id="landingBody">
     <PowerupHeader>
@@ -75,44 +85,67 @@ this.setState({ users: response.data})
            <Link to={`/users/new`}>Sign Up</Link>
     */}
     <FormControl>
+<button onClick={this.changeForm}>Login</button>
 
+<button>Sign Up</button>
     </FormControl>
+{this.state.onLogin ?  <Form>
 
-    <Form>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Placeholder" id="first_name" type="text" class="validate"></input>
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate"></input>
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+       
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate"></input>
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate"></input>
+            <label for="email">Email</label>
+          </div>
+        </div>
+       
+      </form>
+    </div>
+          
+      </Form>
+      :
+      <Form>
 
-  <div class="row">
-    <form class="col s12">
       <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate"></input>
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate"></input>
-          <label for="last_name">Last Name</label>
-        </div>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Placeholder" id="username" type="text" class="validate"></input>
+              <label for="username">Username</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="password" type="text" class="validate"></input>
+              <label for="password">Password</label>
+            </div>
+          </div>
+         
+       
+        </form>
       </div>
-     
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate"></input>
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate"></input>
-          <label for="email">Email</label>
-        </div>
-      </div>
-     
-    </form>
-  </div>
-        
-    </Form>
+            
+        </Form>}
+   
          
         </Background>
-        </body>
+     
        
       
     
