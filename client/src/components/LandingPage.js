@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Axios from 'axios'
 import styled from 'styled-components'
 import HeaderTextImage from '../images/Header.png'
@@ -41,11 +41,15 @@ const Background = styled.div`
 export default class LandingPage extends Component {
     state = {
         users : [],
+        currentUser: {
+            username: ''
+        },
         onLogin: true,
         newUser: {
             username: '',
             email: ''
-        }
+        },
+        redirect: false
     }
 
     changeForm = () => {
@@ -60,6 +64,8 @@ const response = await Axios.get(`/api/users`)
 this.setState({ users: response.data})
     }
 
+  
+
     handleChange = (event) => {
         const new_user = {...this.state.newUser}
         new_user[event.target.name] = event.target.value
@@ -70,6 +76,7 @@ this.setState({ users: response.data})
         event.preventDefault()
         await Axios.post(`api/users`, this.state.newUser)
         console.log("successful")
+        this.setState({ redirect: true })
     }
 
  fetchUsers = async() => {
@@ -78,7 +85,11 @@ this.setState({ users: response.data})
 
 }
     render() {
-
+if(this.state.redirect){
+    return (
+        <Redirect to={`/`}></Redirect>
+    )
+}
         const allUsers = this.state.users.map((user, i) => {
             return (
                 <div key={i}>
@@ -135,8 +146,8 @@ this.setState({ users: response.data})
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
-              <input id="username" type="text" class="validate"></input>
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate" value={this.state.currentUser.username}></input>
               <label for="username">Username</label>
             </div>
     
