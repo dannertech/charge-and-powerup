@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import styled from 'styled-components'
-import HeaderImage from '../images/Header.png'
+import HeaderTextImage from '../images/Header.png'
+import HeaderCarImage from '../images/circle-car-image.png'
 
 
 const PowerupHeader = styled.div`
+
 display: flex;
 justify-content: center;
 align-content: center;
+flex-wrap: wrap;
 `
 
 const Background = styled.div`
@@ -46,7 +49,9 @@ this.setState({ users: response.data})
        
         <Background id="landingBody">
     <PowerupHeader>
-        <img id="headerImage" src={HeaderImage}></img>
+        <img id="headerCarImage" src={HeaderCarImage}></img>
+        
+        <img id="headerImage" src={HeaderTextImage}></img>
     </PowerupHeader>
 
            {/*
