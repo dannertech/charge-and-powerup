@@ -50,6 +50,7 @@ render(){
     }
     return(
         <div>
+            <Link to={}>Back to HomePage</Link>
             <h1>Settings Page</h1>
 <form onSubmit={this.handleSubmit}>
 <label>Username</label>

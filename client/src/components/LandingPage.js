@@ -88,7 +88,7 @@ event.preventDefault()
 for(var i = 0; i < this.state.users.length; i++){
     if(this.state.users[i].username === this.state.userUsernameInput.username){
         this.setState({ currentUser: this.state.users[i] })
-        console.log(this.state.currentUser)
+        // console.log(this.state.currentUser)
         this.setState({ redirectToUsersPage: true})
     }
 }
@@ -121,14 +121,6 @@ if(this.state.redirectToUsersPage){
         <Redirect to={`/users/${this.state.currentUser.id}`}></Redirect>
     )
 }
-        const allUsers = this.state.users.map((user, i) => {
-            return (
-                <div key={i}>
-                    <h1>{user.username}</h1>
-                    <Link to={`/users/${user.id}`} >{user.id}</Link>
-                </div>
-            )
-        })
     return (
         
        
@@ -139,11 +131,6 @@ if(this.state.redirectToUsersPage){
         <img id="headerImage" src={HeaderTextImage}></img>
     </PowerupHeader>
 
-           {/*
-            <h1>Hello</h1>
-           <h1> {allUsers} </h1>
-           <Link to={`/users/new`}>Sign Up</Link>
-    */}
     <FormControl>
 <button onClick={this.changeForm}>Login</button>
 
