@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -6,7 +7,8 @@ export default class AccountSettings extends Component {
     state = {
         user: {
             username: '',
-            password: ''
+            password: '',
+            id: 0
         },
         successful: false
     }
@@ -50,7 +52,7 @@ render(){
     }
     return(
         <div>
-            <Link to={}>Back to HomePage</Link>
+            <Link to={`/users/${this.state.user.id}`}>Back to HomePage</Link>
             <h1>Settings Page</h1>
 <form onSubmit={this.handleSubmit}>
 <label>Username</label>
