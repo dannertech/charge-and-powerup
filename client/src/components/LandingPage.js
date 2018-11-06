@@ -42,14 +42,17 @@ export default class LandingPage extends Component {
     state = {
         users : [],
         currentUser: {
-            username: ''
         },
-        onLogin: true,
+        userUsernameInput: {
+username: ''
+        },
+        onLogin: false,
         newUser: {
             username: '',
             email: ''
         },
-        redirect: false
+        redirectToUsersPage: false,
+        redirectBackToLogin: false
     }
 
     changeForm = () => {
@@ -64,6 +67,12 @@ const response = await Axios.get(`/api/users`)
 this.setState({ users: response.data})
     }
 
+    handleLoginChange = (event) => {
+        const usernameLogin = {...this.state.userUsernameInput}
+        usernameLogin[event.target.name] = event.target.value
+        this.setState({ userUsernameInput: usernameLogin })
+    }
+
   
 
     handleChange = (event) => {
@@ -72,13 +81,26 @@ this.setState({ users: response.data})
         this.setState({ newUser: new_user })
     }
 
+    handleLoginSubmit = (event) => {
+event.preventDefault()
+//loop through users to check for username match
+
+for(var i = 0; i < this.state.users.length; i++){
+    if(this.state.users[i].username === this.state.userUsernameInput.username){
+        this.setState({ currentUser: this.state.users[i] })
+        console.log(this.state.currentUser)
+        this.setState({ redirectToUsersPage: true})
+    }
+}
+    }
+
     handleSubmit = async(event) => {
         event.preventDefault()
         await Axios.post(`api/users`, this.state.newUser)
         console.log("successful")
         
 
-        this.setState({ redirect: true })
+        this.setState({ redirectBackToLogin: true })
     }
 
  fetchUsers = async() => {
@@ -87,11 +109,16 @@ this.setState({ users: response.data})
 
 }
     render() {
-if(this.state.redirect){
+if(this.state.redirectBackToLogin){
     return (
 
         <Redirect to={`/`}></Redirect>
         
+    )
+}
+if(this.state.redirectToUsersPage){
+    return(
+        <Redirect to={`/users/${this.state.currentUser.id}`}></Redirect>
     )
 }
         const allUsers = this.state.users.map((user, i) => {
@@ -148,16 +175,16 @@ if(this.state.redirect){
       <Form>
 
       <div class="row">
-        <form class="col s12">
+        <form class="col s12" onSubmit={this.handleLoginSubmit}>
           <div class="row">
             <div class="input-field col s12">
-              <input id="username" type="text" class="validate" value={this.state.currentUser.username}></input>
+              <input name="username" id="username" type="text" class="validate" value={this.state.userUsernameInput.username} onChange={this.handleLoginChange}></input>
               <label for="username">Username</label>
             </div>
     
           </div>
          
-       
+       <button>Submit</button>
         </form>
       </div>
             
