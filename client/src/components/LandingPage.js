@@ -6,22 +6,23 @@ import HeaderTextImage from '../images/Header.png'
 import HeaderCarImage from '../images/circle-car-image.png'
 
 const FormControl = styled.div`
+
 display: flex;
 align-content: center;
 justify-content: space-around;
-margin: 0% 5% 0% 0%;
+margin: 15% 5% 0% 0%;
 
 `
 
 const Form = styled.div`
-
+background-color: white;
 width: 80vw;
-
-color: black;
+border-radius: 25px;
+color: white;
 display: flex;
 justify-content: center;
 align-content: center;
-margin: 7% 0% 0% 7%;
+margin: 7% 0% 7% 7%;
 `
 
 const PowerupHeader = styled.div`
@@ -33,7 +34,13 @@ flex-wrap: wrap;
 `
 
 const Background = styled.div`
+text-align: center;
 
+`
+
+const FormBorder = styled.div`
+border: 5px solid black;
+border-radius: 25px;
 `
 
 
@@ -130,11 +137,11 @@ if(this.state.redirectToUsersPage){
         
         <img id="headerImage" src={HeaderTextImage}></img>
     </PowerupHeader>
-
+<FormBorder>
     <FormControl>
-<button onClick={this.changeForm}>Login</button>
+<button class="formControl" onClick={this.changeForm}>Login</button>
 
-<button>Sign Up</button>
+<button class="formControl" >Sign Up</button>
     </FormControl>
 {this.state.onLogin ?  <Form>
 
@@ -171,13 +178,13 @@ if(this.state.redirectToUsersPage){
     
           </div>
          
-       <button>Submit</button>
+       <button id="landingSubmit" >Submit</button>
         </form>
       </div>
             
         </Form>}
    
-         
+         </FormBorder>
         </Background>
      
        

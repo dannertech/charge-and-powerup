@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
+
+
+const WelcomeHeader = styled.div`
+
+`
 
 export default class SingleUser extends Component {
     state = {
         user: {},
         cars: []
     }
+
 
     async componentDidMount(){
         const userId = this.props.match.params.id
@@ -29,7 +36,13 @@ return response.data
 
     render() {
         const user = this.state.user
-
+if(this.state.cars.length == 0){
+    return (
+        <div>
+            <h1>You don't have any cars yet</h1>
+        </div>
+    )
+}else{
         const allCars = this.state.cars.map((car, i) => {
             return (
                 <div key={i}>
@@ -39,14 +52,20 @@ return response.data
                 <h1>{car.charge}</h1>
                 </div>
             )
+        
         })
+    
+      
         return (
             <div>
                 <Link to={`/users/${user.id}/settings`}>Settings</Link>
-            <h1>Hi {user.username}</h1>
-            <h1>Here are your cars</h1>
+                <WelcomeHeader>
+            <h3>Hi {user.username}</h3>
+            </WelcomeHeader>
+            <h5>Here are your cars</h5>
           {allCars}
             </div>
         )
+}
     }
 }
