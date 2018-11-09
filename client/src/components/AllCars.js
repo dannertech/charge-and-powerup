@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+const CarCard = styled.div`
+background-image: url("../images/blue-background.png") 
+`
+
 
 export default class AllCars extends Component {
     state = {
@@ -30,13 +34,14 @@ return response.data
 render(){
     const allCars = this.state.cars.map((car,i)=>{
         return (
-        <div key={i}>
+        <CarCard key={i}>
+
             <h1>{car.nickname}</h1>
             <h1>{car.charge}</h1>
             <h3>{car.model}</h3>
             <h3>{car.make}</h3>
             <Link to={`/users/${this.state.user.id}/cars/${car.id}`}>{car.nickname}</Link>
-        </div>
+        </CarCard>
         )
     })
     return(
