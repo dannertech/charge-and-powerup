@@ -16,6 +16,8 @@ WesBos.com (how to add react comments)
 https://wesbos.com/react-jsx-comments/
 
 
+Inline Styling (background-image wasn't working in React)
+https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles
 
 * Ruby version
 
