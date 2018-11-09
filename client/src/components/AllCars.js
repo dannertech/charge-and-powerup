@@ -4,10 +4,22 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import BackgroundBlue from '../images/blue-background.png'
 
+const CarSection = styled.div`
+
+
+`
+
 const CarCard = {
     backgroundImage: `url(${BackgroundBlue})`,
-    backgroundSize: '100%'
+    backgroundSize: 'cover',
+    padding: '20% 10%',
+    margin: '10%',
+    textAlign: 'center',
+    color: 'white'
+ 
 }
+
+
 
 export default class AllCars extends Component {
     state = {
@@ -37,10 +49,9 @@ render(){
         return (
         <div style={CarCard} id="carCard" key={i}>
 
-            <h1>{car.nickname}</h1>
-            <h1>{car.charge}</h1>
-            <h3>{car.model}</h3>
-            <h3>{car.make}</h3>
+            <h3><b>{car.nickname}</b></h3>
+            <h5>{car.charge}</h5>
+         
             <Link to={`/users/${this.state.user.id}/cars/${car.id}`}>{car.nickname}</Link>
         </div>
         )
@@ -48,7 +59,7 @@ render(){
     return(
 <div>
     <h1>Hello this is the all cars page</h1>
-    <div>{allCars}</div>
+    <CarSection>{allCars}</CarSection>
 
 <Link to={`/users/${this.state.user.id}`}>Back to Homepage</Link>
 </div>
