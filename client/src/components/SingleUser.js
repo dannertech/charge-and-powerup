@@ -60,7 +60,7 @@ if(this.state.cars.length == 0){
             <div>
                 <Link to={`/users/${user.id}/settings`}>Settings</Link>
                 <WelcomeHeader>
-            <h3>Hi {user.username}</h3>
+            <h3>Hi <b>{user.username}</b></h3>
             </WelcomeHeader>
             <h5>Here are your cars</h5>
           {allCars}

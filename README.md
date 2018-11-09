@@ -6,6 +6,9 @@ application up and running.
 Things you may want to cover:
 
 ### Credits
+Geoffrey Hale (why my input field would not allow the user to type in it)
+https://stackoverflow.com/questions/34006333/cant-type-in-react-input-text-field
+
 Animesh Singh via Stack Overflow (how to kill something already running on a port)
 https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt
 
