@@ -21,3 +21,11 @@ new_car_diamond = Car.create(
     user_id: new_user_diamond.id ,
     nickname: "BMWBaby"
 )
+
+new_car_diamond = Car.create(
+    charge: 50,
+    model: "i8",
+    make: "BMW",
+    user_id: new_user_diamond.id ,
+    nickname: "BMWBaby"
+)

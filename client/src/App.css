@@ -12,6 +12,24 @@ body {
   color: black;
 }
 
+.card-image{
+  display: flex;
+  justify-content: center;
+
+}
+
+#CarLogo {
+  height: 70%;
+  width: 50%
+}
+
+#carsHeader {
+  display: flex;
+
+
+  
+}
+
 #headerImage {
   width: 80%;
   height: 30%;
@@ -25,5 +43,66 @@ width: 40%;
 height: 30%;
 }
 
+#carLogo {
+  width: 40%;
+  height: 40%;
+}
 
+.navBarLinks {
+  color: black;
+}
+
+#ChargingDot {
+  width: 10%;
+  height: 10%;
+
+}
+
+
+
+#Card {
+  margin: 0% 30% 0% 0%;
+text-align: center;
+}
+
+.links {
+  margin: 1% 1%;
+}
+
+
+
+
+#rectangle {
+  border: 3px solid rgb(38,164,219);
+  border-radius: 10px;
+  background: rgb(38,164,219);
+  color: white;
+  box-shadow: 10px 5px 5px rgba(3,3,3,25%);
+  display: flex;
+  flex-direction: row
+}
+
+#CardRectangle {
+  border: 3px solid rgb(38,164,219);
+  border-radius: 10px;
+  background: rgb(38,164,219);
+  color: white;
+  box-shadow: 10px 5px 5px rgba(3,3,3,25%);
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+#infoButton {
+  background: transparent;
+  border: none;
+ 
+}
+
+#info {
+  height: 20%;
+  width: 50%;
+}
 
