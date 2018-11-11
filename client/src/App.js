@@ -7,9 +7,11 @@ import AllCars from './components/AllCars'
 import SingleCar from './components/SingleCar'
 import AccountSettings from './components/AccountSettings'
 import SignupPage from './components/SignupPage'
+import ChargingStations from './components/ChargingStations'
 
 
 import './App.css';
+import ChargingStations from './components/ChargingStations';
 
 class App extends Component {
   render() {
@@ -19,6 +21,7 @@ class App extends Component {
   <Router>
     <Switch>
       <Route exact path='/' component={LandingPage} />
+      <Route exact path='/chargingstations' component={ChargingStations} />
       <Route exact path='/users' component={AllUsers} />
       <Route exact path='/users/new' component={SignupPage} />
       <Route exact path='/users/:id' component={SingleUser} />

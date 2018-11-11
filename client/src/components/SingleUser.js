@@ -11,7 +11,8 @@ const WelcomeHeader = styled.div`
 export default class SingleUser extends Component {
     state = {
         user: {},
-        cars: []
+        cars: [],
+        loading: true
     }
 
 
@@ -19,6 +20,7 @@ export default class SingleUser extends Component {
         const userId = this.props.match.params.id
 const cars = await this.fetchCars(userId)
         const user = await this.fetchUser(userId)
+        this.setState({loading: false})
         this.setState({ user,cars })
     }
 

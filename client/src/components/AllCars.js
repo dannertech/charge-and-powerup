@@ -83,13 +83,15 @@ padding: '0%'
 export default class AllCars extends Component {
     state = {
         user: {},
-        cars: []
+        cars: [], 
+      
     }
 
     async componentDidMount(){
        const userId = this.props.match.params.id
        const cars = await this.fetchCars(userId)
        const user = await this.fetchUser(userId)
+     
        this.setState({ user,cars})
        console.log(this.state.cars)
     }
@@ -104,6 +106,7 @@ return response.data
         return response.data
     }
 render(){
+   
     const allCars = this.state.cars.map((car,i)=>{
         return (
        
@@ -140,8 +143,11 @@ render(){
 </div>
         )
     })
+
     return(
+      
 <div>
+
     <NavBar>
         <LogoDiv>
             <img id="CarLogo" src={Logo}></img>

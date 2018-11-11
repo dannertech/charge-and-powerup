@@ -7,42 +7,42 @@ import HeaderCarImage from '../images/circle-car-image.png'
 
 const FormControl = styled.div`
 
-display: flex;
-align-content: center;
-justify-content: space-around;
-margin: 15% 5% 0% 0%;
+
+
 
 `
 
 const Form = styled.div`
 background-color: white;
-width: 80vw;
+width: 20vw;
 border-radius: 25px;
 color: white;
-display: flex;
-justify-content: center;
-align-content: center;
-margin: 7% 0% 7% 7%;
+text-align: center;
+
+
 `
 
 const PowerupHeader = styled.div`
 
-display: flex;
-justify-content: center;
-align-content: center;
-flex-wrap: wrap;
+
 `
 
 const Background = styled.div`
-text-align: center;
-
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+margin: 8% 0% 0% 8%
 `
 
 const FormBorder = styled.div`
-border: 5px solid black;
-border-radius: 25px;
-`
 
+`
+const HeaderAndForm = styled.div`
+display: flex;
+flex-direction: column;
+
+`
 
 
 export default class LandingPage extends Component {
@@ -129,14 +129,16 @@ if(this.state.redirectToUsersPage){
     )
 }
     return (
-        
+       
        
         <Background id="landingBody">
+        
     <PowerupHeader>
         <img id="headerCarImage" src={HeaderCarImage}></img>
-        
+        </PowerupHeader>
+        <HeaderAndForm>
         <img id="headerImage" src={HeaderTextImage}></img>
-    </PowerupHeader>
+    
 <FormBorder>
     <FormControl>
 <button class="formControl" onClick={this.changeForm}>Login</button>
@@ -160,7 +162,7 @@ if(this.state.redirectToUsersPage){
             <label for="email">Email</label>
           </div>
         </div>
-       <button>Submit</button>
+       <button id="landingSubmit">Submit</button>
       </form>
     </div>
           
@@ -185,6 +187,7 @@ if(this.state.redirectToUsersPage){
         </Form>}
    
          </FormBorder>
+         </HeaderAndForm>
         </Background>
      
        
