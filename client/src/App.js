@@ -11,7 +11,7 @@ import ChargingStations from './components/ChargingStations'
 
 
 import './App.css';
-import ChargingStations from './components/ChargingStations';
+
 
 class App extends Component {
   render() {
