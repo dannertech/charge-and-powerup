@@ -13,14 +13,21 @@ import CarsHeaderBackground from '../images/Slice (2).png'
 import Logo from '../images/circle-car-image.png'
 
 
+const NavBarLinks = styled.div`
+display: flex;
+flex-direction: row;
+margin: 0% 5% 0% 0%;
+
+`
+
+
 const NavBar = styled.div`
 box-shadow: 10px 5px 5px rgba(0,0,0,25%);
 color: black;
 display: flex
-flex-direction: row
-justify-content: flex-end
-align-content: center
+flex-direction: row;
 background: white;
+justify-content: space-between
 
 
 `
@@ -139,10 +146,12 @@ render(){
         <LogoDiv>
             <img id="CarLogo" src={Logo}></img>
         </LogoDiv>
+        <NavBarLinks>
 <h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}`}>Homepage</Link></h5>
 <br></br>
 <h5 class="links"><b>|</b></h5>
 <h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}`}>Settings</Link></h5>
+</NavBarLinks>
 </NavBar>
 
    <h1 style={CarsHeader}>Cars</h1>
@@ -150,7 +159,9 @@ render(){
     <CarSection>{allCars}</CarSection>
     </PageContent>
 
-
+<a href="#" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
 </div>
     )
 }

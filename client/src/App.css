@@ -19,8 +19,9 @@ body {
 }
 
 #CarLogo {
-  height: 70%;
-  width: 50%
+  height: 90%;
+  width: 10%;
+ margin: 0% 0% 0% 10%;
 }
 
 #carsHeader {
@@ -106,3 +107,19 @@ text-align: center;
   width: 50%;
 }
 
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:black;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
