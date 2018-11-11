@@ -21,8 +21,10 @@ handleSubmit = (event) => {
 }
 
 handleChange = (event) => {
-const userInput = {...this.state.stations}
-userInput[event.target.name] = event.target.value
+const citySearch = {...this.state.citySearch}
+citySearch[event.target.name] = event.target.value
+this.setState({ citySearch })
+console.log(this.state.citySearch.userInput)
 }
 getStations = async() => {
     const response = await axios.get('https://api.openchargemap.io/v2/poi')
@@ -42,7 +44,7 @@ getStations = async() => {
         <div class="col s12">
           Search for Stations:
           <div class="input-field inline">
-            <input name="userInput" id="email_inline" type="email" class="validate"></input>
+            <input name="userInput" id="email_inline" type="email" class="validate" onChange={this.handleChange}></input>
             <label for="email_inline">City Name</label>
             <button type="submit">Submit</button>
           </div>
