@@ -6,19 +6,18 @@ import HeaderTextImage from '../images/Header.png'
 import HeaderCarImage from '../images/circle-car-image.png'
 
 const FormControl = styled.div`
-
-
-
-
+display:flex;
+justify-content: center;
+align-content: center;
 `
 
 const Form = styled.div`
-background-color: white;
-width: 20vw;
+
+
 border-radius: 25px;
 color: white;
-text-align: center;
-
+display: flex;
+flex-direction: row;
 
 `
 
@@ -29,18 +28,19 @@ const PowerupHeader = styled.div`
 
 const Background = styled.div`
 display: flex;
-flex-direction: row;
-justify-content: center;
-align-content: center;
-margin: 8% 0% 0% 8%
+flex-direction: column;
+border-radius: 25px;
+background-color: rgb(255,218,0);
+margin: 0% 0% 0% 0%;
+box-shadow: 10px 5px 5px rgba(0,0,0,25%);
+text-align: center;
 `
 
 const FormBorder = styled.div`
 
 `
 const HeaderAndForm = styled.div`
-display: flex;
-flex-direction: column;
+
 
 `
 
@@ -130,7 +130,7 @@ if(this.state.redirectToUsersPage){
 }
     return (
        
-       
+       <div>
         <Background id="landingBody">
         
     <PowerupHeader>
@@ -138,29 +138,34 @@ if(this.state.redirectToUsersPage){
         </PowerupHeader>
         <HeaderAndForm>
         <img id="headerImage" src={HeaderTextImage}></img>
-    
+        </HeaderAndForm>
+        </Background>
 <FormBorder>
     <FormControl>
-<button class="formControl" onClick={this.changeForm}>Login</button>
+<button class="formControl" onClick={this.changeForm}><h4>Login</h4></button>
 
-<button class="formControl" >Sign Up</button>
+<button class="formControl" ><h4>Sign Up</h4></button>
     </FormControl>
 {this.state.onLogin ?  <Form>
 
     <div class="row">
       <form class="col s12" onSubmit={this.handleSubmit}>
         <div class="row">
-          <div class="input-field col s12">
+        <div class="col s12">
+          <div class="input-field inline">
             <input name="username" id="username" value={this.state.newUser.username} type="text" class="validate" onChange={this.handleChange}></input>
             <label for="username">Username</label>
           </div>
           </div>
+          </div>
  
         <div class="row">
+
           <div class="input-field col s12">
             <input name="email" id="email" value={this.state.newUser.email} type="email" class="validate" onChange={this.handleChange}></input>
             <label for="email">Email</label>
           </div>
+          
         </div>
        <button id="landingSubmit">Submit</button>
       </form>
@@ -173,11 +178,12 @@ if(this.state.redirectToUsersPage){
       <div class="row">
         <form class="col s12" onSubmit={this.handleLoginSubmit}>
           <div class="row">
-            <div class="input-field col s12">
+          <div class="col s12">
+            <div class="input-field inline">
               <input name="username" id="username" type="text" class="validate" value={this.state.userUsernameInput.username} onChange={this.handleLoginChange}></input>
               <label for="username">Username</label>
             </div>
-    
+            </div>
           </div>
          
        <button id="landingSubmit" >Submit</button>
@@ -187,9 +193,9 @@ if(this.state.redirectToUsersPage){
         </Form>}
    
          </FormBorder>
-         </HeaderAndForm>
-        </Background>
      
+        
+         </div>
        
       
     
