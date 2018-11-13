@@ -31,13 +31,14 @@ display: flex;
 flex-direction: column;
 border-radius: 25px;
 background-color: rgb(255,218,0);
-margin: 0% 0% 0% 0%;
 box-shadow: 10px 5px 5px rgba(0,0,0,25%);
 text-align: center;
 `
 
 const FormBorder = styled.div`
-
+background: black;
+color: white;
+border-radius: 25px;
 `
 const HeaderAndForm = styled.div`
 
@@ -142,9 +143,9 @@ if(this.state.redirectToUsersPage){
         </Background>
 <FormBorder>
     <FormControl>
-<button class="formControl" onClick={this.changeForm}><h4>Login</h4></button>
+<button class="formControl" onClick={this.changeForm}><h6>Login</h6></button>
 
-<button class="formControl" onClick={this.changeForm}><h4>Sign Up</h4></button>
+<button class="formControl" onClick={this.changeForm}><h6>Sign Up</h6></button>
     </FormControl>
 {this.state.onLogin ?  <Form>
 
