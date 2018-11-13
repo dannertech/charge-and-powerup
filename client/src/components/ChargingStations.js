@@ -93,6 +93,8 @@ handleSubmit = (event) => {
     }
 }
 
+
+
 handleChange = (event) => {
 const citySearch = {...this.state.citySearch}
 citySearch[event.target.name] = event.target.value
@@ -101,9 +103,9 @@ this.setState({ citySearch })
 }
 getStations = async() => {
     const response = await axios.get('https://api.openchargemap.io/v2/poi/?output=json&countrycode=US')
-    console.log(response)
+
     this.setState({ stations: response.data}) 
-    console.log(this.state.stations[0].AddressInfo.Town)
+ 
 }
 
     render() {
