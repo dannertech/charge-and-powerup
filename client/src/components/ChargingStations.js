@@ -93,6 +93,19 @@ handleSubmit = (event) => {
     }
 }
 
+citySearch = (townName) => {
+const cityName = townName
+const cityList = this.state.stations
+const filteredStations = this.state.filteredStations
+for(var i = 0; i < cityList.length; i++){
+    if(cityList[i].AddressInfo.Town == cityName){
+    
+        filteredStations.push(cityList[i])
+        this.setState({ filteredStations })
+        console.log(this.state.filteredStations)
+    }
+}
+}
 
 
 handleChange = (event) => {
@@ -148,10 +161,10 @@ return(
       <QuickSearch>
   
         
-<button class="atlanta"><p>ATL</p></button>
-<button class="miami"><p>MIA</p></button>
-<button class="new-york"><p>NYC</p></button>
-<button class="los-angeles"><p>LA</p></button>
+<button class="atlanta" onClick={() => this.citySearch("Atlanta")}><p>ATL</p></button>
+<button class="miami" onClick={() => this.citySearch("Seattle")}><p>SEA</p></button>
+<button class="new-york" onClick={() => this.citySearch("Buffalo")}><p>BUF</p></button>
+<button class="los-angeles" onClick={() => this.citySearch("Spokane")}><p>GEG</p></button>
           </QuickSearch>  
            
     <form id="searchForm" onSubmit={this.handleSubmit} class="col s12">
