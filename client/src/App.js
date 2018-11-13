@@ -8,6 +8,7 @@ import SingleCar from './components/SingleCar'
 import AccountSettings from './components/AccountSettings'
 import SignupPage from './components/SignupPage'
 import ChargingStations from './components/ChargingStations'
+import NewCar from './components/NewCar'
 
 
 import './App.css';
@@ -26,6 +27,7 @@ class App extends Component {
       <Route exact path='/users/new' component={SignupPage} />
       <Route exact path='/users/:id' component={SingleUser} />
       <Route exact path='/users/:id/cars' component= {AllCars} />
+      <Route exact path='/users/:id/cars/new' component= {NewCar} />
       <Route exact path='/users/:userId/cars/:id' component = {SingleCar} />
       <Route exact path='/users/:id/settings' component = {AccountSettings} />
       

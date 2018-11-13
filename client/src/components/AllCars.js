@@ -33,9 +33,7 @@ justify-content: space-between
 `
 
 const PageContent = styled.div`
-display: flex;
-justify-content: center;
-align-content: center;
+
 `
 
 const LogoDiv = styled.div`
@@ -60,7 +58,7 @@ const CarCharge = {
 
 const CarSection = styled.div`
 display: flex;
-text-align: center
+flex-wrap: wrap;
 
 
 `
@@ -165,9 +163,9 @@ render(){
     <CarSection>{allCars}</CarSection>
     </PageContent>
 
-<a href="#" class="float">
+<Link to={`/users/${this.state.user.id}/cars/new`} class="float">
 <i class="fa fa-plus my-float"></i>
-</a>
+</Link>
 </div>
     )
 }

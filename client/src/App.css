@@ -134,7 +134,7 @@ box-shadow: 5px 2px 2px rgba(0,0,0,25%);
 
 
 #Card {
-  margin: 0% 30% 0% 0%;
+  margin: 10% 10% 10% 10%;
 text-align: center;
 }
 
@@ -148,9 +148,9 @@ text-align: center;
 
 
 #rectangle {
-  border: 3px solid rgb(38,164,219);
+  border: 3px solid rgb(255,222,0);
   border-radius: 10px;
-  background: rgb(38,164,219);
+  background: rgb(255,222,0);
   color: white;
   box-shadow: 10px 5px 5px rgba(3,3,3,25%);
   display: flex;
@@ -158,9 +158,9 @@ text-align: center;
 }
 
 #CardRectangle {
-  border: 3px solid rgb(38,164,219);
+  border: 3px solid rgb(255,222,0);
   border-radius: 10px;
-  background: rgb(38,164,219);
+  background: rgb(255,222,0);
   color: white;
   box-shadow: 10px 5px 5px rgba(3,3,3,25%);
   margin: 0px 0px 10px 0px;
@@ -217,6 +217,12 @@ text-align: center;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
+}
+
+#formSubmit {
+	background-color:rgb(255,222,0);
+  border-radius: 25px;
+  color: black;
 }
 
 .my-float{
