@@ -2,10 +2,31 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import FrontCarSlice from '../images/front-car-slice.png'
+import WholeCarSlice from '../images/whole.car-slice.png'
+import HalfCarSlice from '../images/car-circle-slice.png'
 
+const Links = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+const BodyContent = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+const Image = styled.img`
+width: 70%;
+height: 100%;
+`
+
+const ImageHeader = styled.div`
+display: flex;
+justify-content: flex-end;
+`
 
 const WelcomeHeader = styled.div`
-
 `
 
 export default class SingleUser extends Component {
@@ -42,15 +63,21 @@ return response.data
     
       
         return (
-            <div>
+            <BodyContent>
                 <Link to={`/users/${user.id}/settings`}>Settings</Link>
                 <WelcomeHeader>
-            <h3>Hi <b>{user.username}</b></h3>
-            </WelcomeHeader>
-<h2>Choose An Action</h2>
+            <p id="HeaderTextDiv">Hi <b id="UserHeaderText">{user.username}</b></p>
+            
+<Links>
 <h5 class="links"><Link class="navBarLinks" to={`/charging-stations`}>Search for Stations</Link></h5>
 <h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}/cars`}>Go to Cars</Link></h5>
-            </div>
+</Links>
+</WelcomeHeader>
+<ImageHeader>
+<Image src={HalfCarSlice}></Image>
+</ImageHeader>
+
+            </BodyContent>
         )
 
     }

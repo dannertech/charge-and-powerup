@@ -18,6 +18,7 @@ border-radius: 25px;
 color: white;
 display: flex;
 flex-direction: row;
+margin: 7% 0% 0% 0%;
 
 `
 
@@ -165,7 +166,6 @@ if(this.state.redirectToUsersPage){
           </div>
  
         <div class="row">
-
           <div class="input-field inline">
             <input name="email" id="email" value={this.state.newUser.email} type="text" class="validate" onChange={this.handleChange}></input>
             <label for="email">Email</label>
