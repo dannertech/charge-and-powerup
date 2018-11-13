@@ -85,6 +85,8 @@ export default class AllCars extends Component {
       
     }
 
+    
+
     async componentDidMount(){
        const userId = this.props.match.params.id
        const cars = await this.fetchCars(userId)
@@ -124,7 +126,7 @@ render(){
             </div>
     <div id="rectangle">
   <button id="infoButton" ><img id="info" src={Info}></img></button>
-  <button id="infoButton" ><img id="info" src={Search}></img></button>
+  <button id="infoButton" ><Link to={'/charging-stations'} ><img id="info" src={Search}></img></Link></button>
   <button id="infoButton" ><img id="info" src={Charge}></img></button>
   </div>
 
