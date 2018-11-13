@@ -3,6 +3,7 @@ This React-on-Rails application utilizes the OpenChargeMap API to retrieve data 
 Through utilizing CSS frameworks such as Materialize and Bootstrap, I was able to create a simple and geometric design for this application.
 Both frameworks were molded so that they do not appear to be from their respective origins and I wanted to show how even some of the most popular frameworks can be customized.
 
+To show my versatility across platforms, I also built a compatible app using Alexa, AWS, and Amazon Lambda services.
 ##Resources Used
 Bootstrap
 Materialize
