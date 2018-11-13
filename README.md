@@ -1,9 +1,13 @@
-# README
+# Powerup
+This React-on-Rails application utilizes the OpenChargeMap API to retrieve data about which charging stations are in which cities.
+Through utilizing CSS frameworks such as Materialize and Bootstrap, I was able to create a simple and geometric design for this application.
+Both frameworks were molded so that they do not appear to be from their respective origins and I wanted to show how even some of the most popular frameworks can be customized.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+##Resources Used
+Bootstrap
+Materialize
+Ruby on Rails
+React
 
 ### Credits
 Geoffrey Hale (why my input field would not allow the user to type in it)
@@ -23,20 +27,3 @@ Floating Button
 https://codepen.io/androidcss/pen/yOopGp
 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
