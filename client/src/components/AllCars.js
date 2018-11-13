@@ -125,7 +125,7 @@ render(){
             </div> 
             </div>
     <div id="rectangle">
-  <button id="infoButton" ><img id="info" src={Info}></img></button>
+  <button id="infoButton" ><Link to={`/user/${this.state.user.id}/cars/${car.id}`}><img id="info" src={Info}></img></Link></button>
   <button id="infoButton" ><Link to={'/charging-stations'} ><img id="info" src={Search}></img></Link></button>
   <button id="infoButton" ><img id="info" src={Charge}></img></button>
   </div>
