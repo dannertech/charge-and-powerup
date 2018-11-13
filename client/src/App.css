@@ -5,6 +5,9 @@ background-size: 100%;
 
 
 }
+.input-field input[type=text]:focus{
+  color: white;
+}
 
 #quickSearch {
   background: black;

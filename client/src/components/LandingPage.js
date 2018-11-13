@@ -21,6 +21,10 @@ flex-direction: row;
 
 `
 
+const TextSyling = {
+    color: 'white'
+}
+
 const PowerupHeader = styled.div`
 
 
@@ -162,8 +166,8 @@ if(this.state.redirectToUsersPage){
  
         <div class="row">
 
-          <div class="input-field col s12">
-            <input name="email" id="email" value={this.state.newUser.email} type="email" class="validate" onChange={this.handleChange}></input>
+          <div class="input-field inline">
+            <input name="email" id="email" value={this.state.newUser.email} type="text" class="validate" onChange={this.handleChange}></input>
             <label for="email">Email</label>
           </div>
           
