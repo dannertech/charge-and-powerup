@@ -129,7 +129,6 @@ box-shadow: 5px 2px 2px rgba(0,0,0,25%);
 #ChargingDot {
   width: 10%;
   height: 10%;
-
 }
 
 
@@ -205,4 +204,21 @@ text-align: center;
 
 #HeaderTextDiv {
   font-size: 400%;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:rgb(255,222,0);
+	color:black;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
 }

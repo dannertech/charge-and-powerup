@@ -20,7 +20,8 @@ Inline Styling (background-image wasn't working in React)
 https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles
 
 Floating Button
-http://androidcss.com/css/css3-floating-button-tutorial/
+https://codepen.io/androidcss/pen/yOopGp
+
 
 * Ruby version
 

@@ -64,13 +64,14 @@ return response.data
       
         return (
             <BodyContent>
-                <Link to={`/users/${user.id}/settings`}>Settings</Link>
+               
                 <WelcomeHeader>
             <p id="HeaderTextDiv">Hi <b id="UserHeaderText">{user.username}</b></p>
             
 <Links>
 <h5 class="links"><Link class="navBarLinks" to={`/charging-stations`}>Search for Stations</Link></h5>
 <h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}/cars`}>Go to Cars</Link></h5>
+<h5 class="links"><Link class="navBarLinks" to={`/users/${user.id}/settings`}>Settings</Link></h5>
 </Links>
 </WelcomeHeader>
 <ImageHeader>
