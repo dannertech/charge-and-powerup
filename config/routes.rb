@@ -7,7 +7,6 @@ end
 
   namespace :api do
     resources :users do
-      resources :stations
       resources :cars
     end
   end
