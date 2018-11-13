@@ -144,7 +144,7 @@ if(this.state.redirectToUsersPage){
     <FormControl>
 <button class="formControl" onClick={this.changeForm}><h4>Login</h4></button>
 
-<button class="formControl" ><h4>Sign Up</h4></button>
+<button class="formControl" onClick={this.changeForm}><h4>Sign Up</h4></button>
     </FormControl>
 {this.state.onLogin ?  <Form>
 

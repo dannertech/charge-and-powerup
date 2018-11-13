@@ -156,7 +156,7 @@ render(){
 <h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}`}>Homepage</Link></h5>
 <br></br>
 <h5 class="links"><b>|</b></h5>
-<h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}`}>Settings</Link></h5>
+<h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}/settings`}>Settings</Link></h5>
 </NavBarLinks>
 </NavBar>
 

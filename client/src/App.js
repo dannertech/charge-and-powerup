@@ -21,7 +21,7 @@ class App extends Component {
   <Router>
     <Switch>
       <Route exact path='/' component={LandingPage} />
-      <Route exact path='/chargingstations' component={ChargingStations} />
+      <Route exact path='/charging-stations' component={ChargingStations} />
       <Route exact path='/users' component={AllUsers} />
       <Route exact path='/users/new' component={SignupPage} />
       <Route exact path='/users/:id' component={SingleUser} />

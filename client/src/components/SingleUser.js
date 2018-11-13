@@ -38,24 +38,7 @@ return response.data
 
     render() {
         const user = this.state.user
-if(this.state.cars.length == 0){
-    return (
-        <div>
-            <h1>You don't have any cars yet</h1>
-        </div>
-    )
-}else{
-        const allCars = this.state.cars.map((car, i) => {
-            return (
-                <div key={i}>
-                <h1>
-                <Link to={`/users/${user.id}/cars/${car.id}`} >{car.nickname}</Link>
-                </h1>
-                <h1>{car.charge}</h1>
-                </div>
-            )
-        
-        })
+
     
       
         return (
@@ -64,10 +47,11 @@ if(this.state.cars.length == 0){
                 <WelcomeHeader>
             <h3>Hi <b>{user.username}</b></h3>
             </WelcomeHeader>
-            <h5>Here are your cars</h5>
-          {allCars}
+<h2>Choose An Action</h2>
+<h5 class="links"><Link class="navBarLinks" to={`/charging-stations`}>Search for Stations</Link></h5>
+<h5 class="links"><Link class="navBarLinks" to={`/users/${this.state.user.id}/cars`}>Go to Cars</Link></h5>
             </div>
         )
-}
+
     }
 }
