@@ -102,7 +102,7 @@ for(var i = 0; i < cityList.length; i++){
     
         filteredStations.push(cityList[i])
         this.setState({ filteredStations })
-        console.log(this.state.filteredStations)
+       
     }
 }
 }
